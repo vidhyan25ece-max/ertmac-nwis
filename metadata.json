@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix eRTMAC-NWIS",
+  "description": "Nearby Wells Intelligence System - Intelligent drilling decision support and offset hazard prediction",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

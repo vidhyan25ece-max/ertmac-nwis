@@ -1,0 +1,220 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Leaflet map styles */
+.leaflet-container {
+  font-family: inherit;
+  background-color: #050b16;
+}
+
+.dark .leaflet-container {
+  background-color: #050b16;
+}
+
+.leaflet-bar a {
+  background-color: #0f172a !important;
+  color: #38bdf8 !important;
+  border-color: #334155 !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #1e293b !important;
+  color: #7dd3fc !important;
+}
+
+.active-well-badge {
+  background-color: #ffffff !important;
+  color: #0284c7 !important;
+  border: 1.5px solid #0284c7 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  padding: 2px 6px !important;
+}
+
+.active-well-badge::before {
+  border-top-color: #0284c7 !important;
+}
+
+.well-hover-tooltip {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  padding: 4px 8px !important;
+}
+
+.well-hover-tooltip::before {
+  border-top-color: #0f172a !important;
+}
+
+.leaflet-control-scale-line {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  color: #0f172a !important;
+  border: 2px solid #0f172a !important;
+  border-top: none !important;
+  font-family: monospace !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 10px !important;
+  padding: 0 4px !important;
+}
+
+/* =========================================================
+   eRTMAC-NWIS ENTRY SCREEN
+   ========================================================= */
+
+.entry-screen {
+  isolation: isolate;
+}
+
+.entry-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.045) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.technical-word {
+  position: absolute;
+  white-space: nowrap;
+  color: rgba(148, 163, 184, 0.12);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  user-select: none;
+  animation: technicalFloat linear infinite;
+}
+
+@keyframes technicalFloat {
+  0% {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate3d(20px, -25px, 0);
+    opacity: 0.45;
+  }
+
+  85% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate3d(-15px, -60px, 0);
+    opacity: 0;
+  }
+}
+
+.drill-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.16),
+    transparent
+  );
+  transform-origin: left center;
+}
+
+.drill-line-1 {
+  left: 5%;
+  top: 30%;
+  width: 35%;
+  transform: rotate(-18deg);
+}
+
+.drill-line-2 {
+  right: 2%;
+  top: 60%;
+  width: 30%;
+  transform: rotate(24deg);
+}
+
+.drill-line-3 {
+  left: 25%;
+  bottom: 15%;
+  width: 25%;
+  transform: rotate(-8deg);
+}
+
+.entry-start-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.entry-start-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-110%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  transition: transform 0.6s ease;
+}
+
+.entry-start-button:hover::before {
+  transform: translateX(110%);
+}
+
+/* =========================================================
+   LOGIN SCREEN
+   ========================================================= */
+
+.login-screen {
+  animation: loginAppear 0.45s ease-out both;
+}
+
+@keyframes loginAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom crisp scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
